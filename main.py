@@ -35,7 +35,7 @@ if not github_token:
     sys.exit(1)
 
 # Repository details
-repo_name = "mausumi345/IntelliOps-Backend"
+repo_name = "ashutosh-mishra/IntelliopsBackend"
 
 # Initialize OpenAI client
 openai.api_key = api_key
@@ -238,6 +238,8 @@ def extract_python_code(llm_response):
     return code_str
 
 def commit_github_and_raise_pr_for_tests(branch_name):
+    branch_name = branch_name.replace(":", "")
+
     import ipdb;ipdb.set_trace()
     # Commit the generated files to the repository
     os.system("git checkout -b " + branch_name)
@@ -254,10 +256,15 @@ def commit_github_and_raise_pr_for_tests(branch_name):
 
     repo.create_pull(title=pr_title, body=pr_body, head=branch_name, base="main")
 
-
     logging.info("Generated files committed and PR created successfully.")
 
+    logging.info("Switching back to main branch")
+    os.system("git checkout main")
+
+
 def commit_github_and_raise_pr_for_datasets(branch_name):
+    branch_name = branch_name.replace(":", "")
+
     # Commit the generated files to the repository
     os.system("git checkout -b " + branch_name)
     os.system("git add ./artifacts/datasets")
@@ -273,3 +280,6 @@ def commit_github_and_raise_pr_for_datasets(branch_name):
     repo.create_pull(title=pr_title, body=pr_body, head=branch_name, base="main")
 
     logging.info("Generated files committed and PR created successfully.")
+
+    logging.info("Switching back to main branch")
+    os.system("git checkout main")

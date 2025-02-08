@@ -1,7 +1,7 @@
 import pytest
 import pytest_asyncio
 from httpx import AsyncClient, Client
-from api_server.app.main import app
+from mock_server.app.main import app
 import time
 
 

@@ -1,6 +1,6 @@
 from starlette.testclient import TestClient
-from api_server.app.db import database
-from api_server.app.main import app
+from mock_server.app.db import database
+from mock_server.app.main import app
 import json
 
 client = TestClient(app)

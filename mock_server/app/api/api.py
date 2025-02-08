@@ -1,4 +1,4 @@
-from api_server.app.db import database, models
+from mock_server.app.db import database, models
 
 users =  sorted(database.generate_user_db(), key=lambda d: d['id']) #always return sorted by id
 companies = database.generate_company_db()
