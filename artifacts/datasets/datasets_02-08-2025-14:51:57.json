@@ -1,0 +1,101 @@
+[
+    {
+        "positive_dataset": {
+            "name": "John Doe",
+            "email": "john.doe@example.com"
+        },
+        "negative_dataset": {
+            "name": 123456,
+            "email": "john.doe@example"
+        }
+    },
+    {
+        "positive_dataset": {
+            "name": "John Doe",
+            "email": "JohnDoe@example.com"
+        },
+        "negative_dataset": {
+            "name": 12345,
+            "email": "JohnDoe@example.com"
+        }
+    },
+    {
+        "positive_dataset": {
+            "name": "John Doe",
+            "email": "johndoe@example.com"
+        },
+        "negative_dataset": {
+            "name": 12345,
+            "email": "johndoe@example.com"
+        }
+    },
+    {
+        "positive_dataset": {
+            "name": "John Doe",
+            "email": "johndoe@example.com"
+        },
+        "negative_dataset": {
+            "name": 12345,
+            "email": "johndoe@example.com"
+        }
+    },
+    {
+        "positive_dataset": {
+            "name": "John Doe",
+            "email": "johndoe@email.com"
+        },
+        "negative_dataset": {
+            "name": 12345,
+            "email": "johndoe@email.com"
+        }
+    },
+    {
+        "positive_dataset": {
+            "name": "John Doe",
+            "email": "johndoe@example.com"
+        },
+        "negative_dataset": {
+            "name": "John Doe"
+        }
+    },
+    {
+        "positive_dataset": {
+            "name": "John Doe",
+            "email": "johndoe@example.com"
+        },
+        "negative_dataset": {
+            "name": 12345,
+            "email": "johndoe@example.com"
+        }
+    },
+    {
+        "positive_dataset": {
+            "name": "John Doe",
+            "email": "johndoe@email.com"
+        },
+        "negative_dataset": {
+            "name": 12345,
+            "email": "johndoe@email.com"
+        }
+    },
+    {
+        "positive_dataset": {
+            "name": "John Doe",
+            "email": "johndoe@example.com"
+        },
+        "negative_dataset": {
+            "name": 12345,
+            "email": "johndoe@example.com"
+        }
+    },
+    {
+        "positive_dataset": {
+            "name": "John Doe",
+            "email": "johndoe@example.com"
+        },
+        "negative_dataset": {
+            "name": 12345,
+            "email": "johndoe@example.com"
+        }
+    }
+]
