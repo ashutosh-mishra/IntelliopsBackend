@@ -1,0 +1,56 @@
+[
+    {
+        "positive_dataset": {},
+        "negative_dataset": [
+            "This is an array, not an object."
+        ]
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": {
+            "name": "John Doe"
+        }
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": "string instead of object"
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": [
+            "This is a array not an object"
+        ]
+    },
+    {
+        "positive_dataset": {
+            "error": "Failed to generate positive dataset"
+        },
+        "negative_dataset": {
+            "error": "Failed to generate negative dataset"
+        }
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": [
+            "This is not an object"
+        ]
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": "Hello World"
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": {
+            "name": "John Doe"
+        }
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": "Hello, I'm not a JSON object"
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": "Hello, I am not a JSON object"
+    }
+]
