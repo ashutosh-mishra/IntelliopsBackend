@@ -266,7 +266,7 @@ def commit_github_and_raise_pr_for_datasets(branch_name):
 
     # Commit the generated files to the repository
     os.system("git checkout -b " + branch_name)
-    os.system("git add ./artifacts/datasets")
+    os.system("git add ./artifacts/datasets/*")
     os.system("git commit -m 'Add generated datasets'")
     os.system("git push origin " + branch_name)
 
