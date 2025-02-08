@@ -82,7 +82,10 @@ async def generate_tests(api_json: ApiJson):
         with open(gen_test_file_path, "w+") as f:
             f.write(generated_tests_code)
 
-        commit_github_and_raise_pr_for_tests("generated-tests-" + date_time)
+        try:
+            commit_github_and_raise_pr_for_tests("generated-tests-" + date_time)
+        except Exception as e:
+            logging.error(f"Error committing tests: {e}")
 
         return {"tests": generated_tests_code}
 
@@ -134,7 +137,10 @@ async def generate_datasets(api_schema: ApiJsonSchema):
     with open(ds_file_path, "w+") as f:
       json.dump(datasets, f, indent=4)
 
-    commit_github_and_raise_pr_for_tests("generated-datasets-" + date_time)
+    try:
+        commit_github_and_raise_pr_for_datasets("generated-datasets-" + date_time)
+    except Exception as e:
+        logging.error(f"Error committing datasets: {e}")
 
     print("Committing changes in branch")
     return JSONResponse(content={"datasets": datasets})
