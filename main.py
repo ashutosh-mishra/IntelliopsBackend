@@ -240,9 +240,10 @@ def extract_python_code(llm_response):
 def commit_github_and_raise_pr_for_tests(branch_name):
     import ipdb;ipdb.set_trace()
     # Commit the generated files to the repository
+    os.system("git checkout -b " + branch_name)
     os.system("git add ./artifacts/generated_tests")
     os.system("git commit -m 'Add generated tests'")
-    
+
     os.system("git push origin " + branch_name)
 
     pr_title = "Generated artifacts"
@@ -258,6 +259,7 @@ def commit_github_and_raise_pr_for_tests(branch_name):
 
 def commit_github_and_raise_pr_for_datasets(branch_name):
     # Commit the generated files to the repository
+    os.system("git checkout -b " + branch_name)
     os.system("git add ./artifacts/datasets")
     os.system("git commit -m 'Add generated datasets'")
     os.system("git push origin " + branch_name)
