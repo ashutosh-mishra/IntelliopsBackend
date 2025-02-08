@@ -35,7 +35,7 @@ jobs:
       # Stop the server if necessary (cleanup)
       - name: Stop the server
         if: always()
-        run: kill $(lsof -t -i:9000) || true
+        run: kill $(lsof -t -i:5000) || true
 
       - name: build docker image
         run: |

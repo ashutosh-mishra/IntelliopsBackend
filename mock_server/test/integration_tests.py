@@ -7,12 +7,12 @@ import time
 
 @pytest_asyncio.fixture
 async def async_client():
-    async with AsyncClient(base_url="http://localhost:9000") as client:
+    async with AsyncClient(base_url="http://localhost:5000") as client:
         yield client
 
 @pytest_asyncio.fixture
 def sync_client():
-    with Client(base_url="http://localhost:9000") as client:
+    with Client(base_url="http://localhost:5000") as client:
         yield client
 
 
