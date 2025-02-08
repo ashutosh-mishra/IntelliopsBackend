@@ -1,0 +1,69 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: install dependencies
+        run: |
+          pip3 install -r mock_server/requirements.txt
+      
+      - name: run tests
+        run: |
+          pytest mock_server/test/test.py
+
+      - name: Start the server
+        run: |
+          uvicorn mock_server.app.main:app  --port 5000 &
+
+      # Run integration tests
+      - name: Run integration tests for mock_server
+        run: pytest mock_server/test/integration_tests.py
+
+      # Stop the server if necessary (cleanup)
+      - name: Stop the server
+        if: always()
+        run: kill $(lsof -t -i:9000) || true
+
+      - name: build docker image
+        run: |
+          echo "Build docker image"
+          docker build -t ashutosh-mishra/sample-apis:${{ github.sha }} .
+      
+      # - name: docker login
+      #   uses: docker/login-action@v1
+      #   with:
+      #     username: ${{ secrets.DOCKER_USERNAME }}
+      #     password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: push docker image
+        run: |
+          echo "Push docker image"
+          # docker push davejfranco/python-fastapi-demo:${{ github.sha }}
+
+    # outputs:
+    #   image: ashutosh-mishra/sample-apis:${{ github.sha }}
+  
+  cd:
+    needs: ci
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: pull docker image
+        run: echo "Pull above built docker image and deploy to prod"
+        # run: |
+        #   docker pull ashutosh-mishra/sample-apis:${{ github.sha }}
+        
+  

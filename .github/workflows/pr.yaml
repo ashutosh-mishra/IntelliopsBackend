@@ -1,0 +1,33 @@
+name: PR checks
+
+on:
+  - pull_request
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      
+      - name: install dependencies
+        run: |
+          pip3 install -r mock_server/requirements.txt
+      
+      - name: run tests
+        run: |
+          pytest mock_server/test/test.py
+          echo "Run npm tests"
+
+      - name: Start the server
+        run: |
+          uvicorn mock_server.app.main:app  --port 9000 &
+
+      # Run integration tests
+      - name: Run integration tests for mock_server
+        run: pytest mock_server/test/integration_tests.py
+
+      # Stop the server if necessary (cleanup)
+      - name: Stop the server
+        if: always()
+        run: kill $(lsof -t -i:9000) || true
