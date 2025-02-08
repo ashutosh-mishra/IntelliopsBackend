@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "Acme Corp",
+        "userId": 1
+    },
+    {
+        "id": 2,
+        "name": "Alphabet Inc.",
+        "userId": 2
+    },
+    {
+        "id": 3,
+        "name": "Apple Inc.",
+        "userId": 3
+    },
+    {
+        "id": 4,
+        "name": "Nvidia Corporation",
+        "userId": 4
+    },
+    {
+        "id": 5,
+        "name": "Microsoft Corporation",
+        "userId": 5
+    }
+]
