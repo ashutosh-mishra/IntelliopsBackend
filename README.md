@@ -1,4 +1,7 @@
 # IntelliopsBackend
 
-## Run Server
-uvicorn mock_server.main:app --port 5000
+## Run server
+uvicorn main:app
+
+## Run mock server
+uvicorn mock_server.app.main:app --port 5000
