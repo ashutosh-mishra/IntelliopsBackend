@@ -132,7 +132,7 @@ async def generate_datasets(api_schema: ApiJsonSchema):
     print("generated datasets: ", datasets)
 
     date_time = get_current_time()
-    dataset_dir_path = "./artifacts/datasets"
+    dataset_dir_path = "./artifacts/datasets/"
     ds_name = f"datasets_{date_time}" + ".json"
     if not os.path.exists(dataset_dir_path):
         os.makedirs(dataset_dir_path)
