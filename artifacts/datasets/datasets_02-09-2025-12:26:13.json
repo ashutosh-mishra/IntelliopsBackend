@@ -1,0 +1,54 @@
+[
+    {
+        "positive_dataset": {},
+        "negative_dataset": {
+            "name": "John Doe"
+        }
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": "Hello, world"
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": {
+            "name": "John Doe",
+            "age": 30
+        }
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": "notAnObject"
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": {
+            "name": "John Doe"
+        }
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": "Hello world"
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": "Hello World"
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": [
+            "This is an array, not an object"
+        ]
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": "this is a string not an object"
+    },
+    {
+        "positive_dataset": {},
+        "negative_dataset": {
+            "name": "John Doe",
+            "age": 30
+        }
+    }
+]
